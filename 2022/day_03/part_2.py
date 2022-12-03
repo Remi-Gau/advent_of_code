@@ -1,4 +1,3 @@
-import math
 from rich import print
 import string
 
@@ -9,22 +8,24 @@ from utils import load_input
     Uppercase item types A through Z have priorities 27 through 52.
 """
 
-verbose = False
+verbose = True
 
 input_data = load_input()
 
 
-def find_common_item(row):
+def find_common_item(group):
 
-    compartment_1 = row[: math.floor(len(row) / 2)]
-    compartment_2 = row[math.ceil(len(row) / 2) :]
-    common_item = str(set(compartment_1) & set(compartment_2))
+    elf_1 = group[0]
+    elf_2 = group[1]
+    elf_3 = group[2]
+
+    common_item = str(set(elf_1) & set(elf_2) & set(elf_3))
     common_item = common_item.replace("{", "").replace("}", "").replace("'", "")
+
     if verbose:
-        print(f"Compartment 1: {compartment_1}")
-        print(f"Compartment 2: {compartment_2}")
-        print(f"Common item: {common_item}")
-    assert len(compartment_1) == len(compartment_2)
+        print(f"group: {group}")
+        print(f"Common item: {common_item}\n")
+
     assert common_item
     return common_item
 
@@ -37,18 +38,21 @@ def find_common_item_priority(common_item):
 
 
 priorities = []
+group = []
+elf_counter = 0
 for row in input_data.splitlines():
 
     if verbose:
-        print(f"\n{row}")
+        print(f"row: {row}")
 
-    common_item = find_common_item(row)
-    priority = find_common_item_priority(common_item)
+    group.append(row)
 
-    priorities.append(priority)
+    if len(group)==3:
+        common_item = find_common_item(group)
+        priority = find_common_item_priority(common_item)
+        priorities.append(priority)
+        group = []
 
 total_score = sum(priorities)
 
 print(f"total score is {total_score}")
-
-assert(total_score==7817)
