@@ -1,4 +1,3 @@
-from pathlib import Path
 from rich import print
 
 from utils import load_input
