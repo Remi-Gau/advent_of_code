@@ -7,6 +7,7 @@ verbose = False
 input_data = load_input()
 
 full_overlap_count = 0
+partial_overlap_count = 0
 
 for line in input_data:
 
@@ -34,5 +35,12 @@ for line in input_data:
     if id_ranges[0].issubset(id_ranges[1]) or id_ranges[1].issubset(id_ranges[0]):
         full_overlap_count += 1
 
+    if len(id_ranges[0] & id_ranges[1]) > 0:
+        partial_overlap_count += 1
+
 
 print(f"Full overlap count:{full_overlap_count}")
+print(f"Partial overlap count:{partial_overlap_count}")
+
+assert full_overlap_count == 580
+assert partial_overlap_count == 895
