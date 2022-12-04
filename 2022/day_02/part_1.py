@@ -63,4 +63,4 @@ total_score = sum(score)
 
 print(f"total score is {total_score}")
 
-assert total_score == 11841
+

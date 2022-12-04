@@ -42,5 +42,3 @@ for line in input_data:
 print(f"Full overlap count:{full_overlap_count}")
 print(f"Partial overlap count:{partial_overlap_count}")
 
-assert full_overlap_count == 580
-assert partial_overlap_count == 895

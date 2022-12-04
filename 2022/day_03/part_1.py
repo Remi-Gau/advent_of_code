@@ -51,4 +51,3 @@ total_score = sum(priorities)
 
 print(f"total score is {total_score}")
 
-assert(total_score==7817)
