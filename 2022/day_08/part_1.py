@@ -1,25 +1,6 @@
-import pandas as pd
 from rich import print
 from utils import load_input
-
-
-def turn_into_df(input_data):
-
-    data = {}
-
-    for row in input_data:
-
-        if row == "":
-            continue
-
-        for i, col in enumerate(row):
-            if i not in data:
-                data[i] = []
-            data[i].append(col)
-
-    grid = pd.DataFrame(data)
-
-    return grid
+from utils import turn_into_df
 
 
 def set_all_cols_to_true(grid, i_row, cols):
@@ -122,7 +103,7 @@ def main():
             grid, visibility_grid, col_max[i_col], i_col, list(reversed(rows))
         )
 
-    # visibility_grid.replace(list(range(10)), value=False, inplace=True)
+    visibility_grid.replace(list(range(10)), value=False, inplace=True)
 
     print("\ngrid")
     print(grid)

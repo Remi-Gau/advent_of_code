@@ -8,12 +8,6 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
       - id: check-json # checks json files for parseable syntax.
-
-  - repo: https://github.com/psf/black
-    rev: "22.10.0"
-    hooks:
-      - id: black
-
   - repo: https://github.com/asottile/reorder_python_imports
     rev: "v3.9.0"
     hooks:
@@ -35,3 +29,8 @@ repos:
       - id: style-files
         args: [--scope=spaces, --reindention=specify_reindention('#')]
       - id: parsable-R
+
+  - repo: https://github.com/psf/black
+    rev: "22.10.0"
+    hooks:
+      - id: black
