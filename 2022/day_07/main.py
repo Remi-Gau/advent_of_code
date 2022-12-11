@@ -6,6 +6,9 @@ from utils import load_input
 
 size_limit = 100000
 
+total_space = 70000000
+required_space = 30000000
+
 input_data = load_input()
 
 
@@ -49,6 +52,26 @@ def update_size(this_dir):
     return this_dir
 
 
+def list_size_dirs_above_threshold(this_dir, threshold, size_list=None):
+
+    if size_list is None:
+        size_list = []
+
+    if this_dir["_size"] >= threshold:
+        size_list.append(this_dir["_size"])
+
+    print(this_dir["_size"])
+
+    for key in this_dir:
+        if key not in ["_file_list", "_size"]:
+
+            size_list = list_size_dirs_above_threshold(
+                this_dir[key], threshold, size_list=size_list
+            )
+
+    return size_list
+
+
 def total_small_dirs(this_dir, total=0):
     if this_dir["_size"] < size_limit:
         total += this_dir["_size"]
@@ -86,11 +109,18 @@ def main():
     file_system = update_size(file_system)
 
     print(file_system)
-    print(file_system["_size"])
+    print(f"used space: {file_system['_size']}")
 
     total = total_small_dirs(file_system, total=0)
+    print(f"total of all small dirs: {total}")
 
-    print(total)
+    free_space = total_space - file_system["_size"]
+    space_to_free = required_space - free_space
+    print(f"space to free: {space_to_free}")
+
+    size_list = list_size_dirs_above_threshold(file_system, space_to_free)
+
+    print(sorted(size_list, reverse=True))
 
 
 if __name__ == "__main__":
