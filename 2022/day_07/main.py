@@ -86,6 +86,7 @@ def main():
     file_system = update_size(file_system)
 
     print(file_system)
+    print(file_system["_size"])
 
     total = total_small_dirs(file_system, total=0)
 
