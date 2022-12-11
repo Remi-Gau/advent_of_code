@@ -1,6 +1,6 @@
-from rich import print
 import string
 
+from rich import print
 from utils import load_input
 
 """
@@ -29,12 +29,13 @@ def find_common_item(group):
     assert common_item
     return common_item
 
+
 def find_common_item_priority(common_item):
     lowercase = list(string.ascii_lowercase)
     if common_item in lowercase:
         return lowercase.index(common_item) + 1
     uppercase = list(string.ascii_uppercase)
-    return uppercase.index(common_item) + 27    
+    return uppercase.index(common_item) + 27
 
 
 priorities = []
@@ -47,7 +48,7 @@ for row in input_data.splitlines():
 
     group.append(row)
 
-    if len(group)==3:
+    if len(group) == 3:
         common_item = find_common_item(group)
         priority = find_common_item_priority(common_item)
         priorities.append(priority)

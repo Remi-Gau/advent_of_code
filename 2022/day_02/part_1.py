@@ -1,5 +1,4 @@
 from rich import print
-
 from utils import load_input
 
 """
@@ -23,6 +22,7 @@ verbose = False
 
 input_data = load_input()
 
+
 def return_shape_score(row):
     shape_score = 0
     if row[2] == "X":
@@ -32,6 +32,7 @@ def return_shape_score(row):
     elif row[2] == "Z":
         shape_score = scissors_value
     return shape_score
+
 
 def return_outcome_score(row):
     outcome_score = 0
@@ -62,5 +63,3 @@ for row in input_data.splitlines():
 total_score = sum(score)
 
 print(f"total score is {total_score}")
-
-

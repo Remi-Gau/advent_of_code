@@ -1,5 +1,4 @@
 from rich import print
-
 from utils import load_input
 
 verbose = False
@@ -41,4 +40,3 @@ for line in input_data:
 
 print(f"Full overlap count:{full_overlap_count}")
 print(f"Partial overlap count:{partial_overlap_count}")
-

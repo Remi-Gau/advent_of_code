@@ -1,5 +1,4 @@
 from rich import print
-
 from utils import load_input
 
 """
@@ -22,6 +21,7 @@ verbose = False
 
 input_data = load_input()
 
+
 def return_shape_score(shape):
     shape_score = 0
     if shape == "A":
@@ -31,6 +31,7 @@ def return_shape_score(shape):
     elif shape == "C":
         shape_score = scissors_value
     return shape_score
+
 
 def return_outcome_score(row):
     if row[2] == "X":
@@ -42,8 +43,7 @@ def return_outcome_score(row):
     return outcome_score
 
 
-score = []
-for row in input_data.splitlines():
+def return_shape(row):
 
     outcome_score = return_outcome_score(row)
 
@@ -66,18 +66,35 @@ for row in input_data.splitlines():
         elif row[0] == "C":
             shape = "A"
 
-    shape_score = return_shape_score(shape)
+    return shape
 
-    score_round = shape_score + outcome_score
 
-    score.append(score_round)
+def main():
 
-    if verbose:
-        print(row)
-        print(f"shape score is {shape_score}")
-        print(f"outcome score is {outcome_score}")
-        print(f"round score is {score_round}")
+    score = []
 
-total_score = sum(score)
+    for row in input_data.splitlines():
 
-print(f"total score is {total_score}")
+        outcome_score = return_outcome_score(row)
+
+        shape = return_shape(row)
+
+        shape_score = return_shape_score(shape)
+
+        score_round = shape_score + outcome_score
+
+        score.append(score_round)
+
+        if verbose:
+            print(row)
+            print(f"shape score is {shape_score}")
+            print(f"outcome score is {outcome_score}")
+            print(f"round score is {score_round}")
+
+    total_score = sum(score)
+
+    print(f"total score is {total_score}")
+
+
+if __name__ == "__main__":
+    main()

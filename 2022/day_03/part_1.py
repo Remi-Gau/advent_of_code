@@ -1,7 +1,7 @@
 import math
-from rich import print
 import string
 
+from rich import print
 from utils import load_input
 
 """
@@ -17,7 +17,7 @@ input_data = load_input()
 def find_common_item(row):
 
     compartment_1 = row[: math.floor(len(row) / 2)]
-    compartment_2 = row[math.ceil(len(row) / 2) :]
+    compartment_2 = row[math.ceil(len(row) / 2)]
     common_item = str(set(compartment_1) & set(compartment_2))
     common_item = common_item.replace("{", "").replace("}", "").replace("'", "")
     if verbose:
@@ -28,12 +28,13 @@ def find_common_item(row):
     assert common_item
     return common_item
 
+
 def find_common_item_priority(common_item):
     lowercase = list(string.ascii_lowercase)
     if common_item in lowercase:
         return lowercase.index(common_item) + 1
     uppercase = list(string.ascii_uppercase)
-    return uppercase.index(common_item) + 27    
+    return uppercase.index(common_item) + 27
 
 
 priorities = []
@@ -50,4 +51,3 @@ for row in input_data.splitlines():
 total_score = sum(priorities)
 
 print(f"total score is {total_score}")
-
