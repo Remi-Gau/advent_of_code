@@ -81,6 +81,9 @@ def main():
     print("\nvisibility grid")
     print(visibility_grid)
 
+    print("\nnumber of visible trees")
+    print(visibility_grid.sum().sum())
+
 
 if __name__ == "__main__":
     main()
