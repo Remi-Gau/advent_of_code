@@ -53,7 +53,6 @@ def update_size(this_dir):
 
 
 def list_size_dirs_above_threshold(this_dir, threshold, size_list=None):
-
     if size_list is None:
         size_list = []
 
@@ -64,7 +63,6 @@ def list_size_dirs_above_threshold(this_dir, threshold, size_list=None):
 
     for key in this_dir:
         if key not in ["_file_list", "_size"]:
-
             size_list = list_size_dirs_above_threshold(
                 this_dir[key], threshold, size_list=size_list
             )
@@ -82,13 +80,11 @@ def total_small_dirs(this_dir, total=0):
 
 
 def main():
-
     cwd = ""
 
     file_system = {"_size": 0, "_file_list": []}
 
     for line in input_data:
-
         if line == "":
             continue
 

@@ -5,7 +5,6 @@ import pandas as pd
 
 
 def load_input(test: bool = False):
-
     input_file = Path(__file__).parent.joinpath("input.txt")
     if test:
         input_file = Path(__file__).parent.joinpath("input_test.txt")
@@ -15,11 +14,9 @@ def load_input(test: bool = False):
 
 
 def turn_into_df(input_data):
-
     data = {}
 
     for row in input_data:
-
         if row == "":
             continue
 
@@ -34,7 +31,6 @@ def turn_into_df(input_data):
 
 
 def turn_into_npa(input_data):
-
     data = [[int(x) for x in row] for row in input_data if row != ""]
 
     return np.array(data)

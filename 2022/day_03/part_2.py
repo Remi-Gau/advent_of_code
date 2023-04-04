@@ -14,7 +14,6 @@ input_data = load_input()
 
 
 def find_common_item(group):
-
     elf_1 = group[0]
     elf_2 = group[1]
     elf_3 = group[2]
@@ -42,7 +41,6 @@ priorities = []
 group = []
 elf_counter = 0
 for row in input_data.splitlines():
-
     if verbose:
         print(f"row: {row}")
 

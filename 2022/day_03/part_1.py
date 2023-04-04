@@ -15,7 +15,6 @@ input_data = load_input()
 
 
 def find_common_item(row):
-
     compartment_1 = row[: math.floor(len(row) / 2)]
     compartment_2 = row[math.ceil(len(row) / 2)]
     common_item = str(set(compartment_1) & set(compartment_2))
@@ -39,7 +38,6 @@ def find_common_item_priority(common_item):
 
 priorities = []
 for row in input_data.splitlines():
-
     if verbose:
         print(f"\n{row}")
 

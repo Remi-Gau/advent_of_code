@@ -7,7 +7,6 @@ from utils import turn_into_npa
 
 
 def get_viewing_distance(is_smaller_tree):
-
     viewing_distance = 1
 
     if is_smaller_tree.size == 0:
@@ -27,7 +26,6 @@ def get_viewing_distance(is_smaller_tree):
 
 
 def main():
-
     input_data = load_input(test=False)
 
     grid = turn_into_npa(input_data)
@@ -37,7 +35,6 @@ def main():
     scenic_score = np.zeros((nb_rows, nb_cols))
 
     for i, j in itertools.product(range(nb_rows), range(nb_cols)):
-
         visible = grid < grid[i, j]
 
         # up

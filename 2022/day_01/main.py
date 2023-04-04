@@ -12,7 +12,6 @@ with input_file.open() as f:
 elves = []
 this_elf = []
 for row in input_data.splitlines():
-
     if row == "":
         elves.append(sum(this_elf))
         if verbose:
