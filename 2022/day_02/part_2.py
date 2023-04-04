@@ -44,7 +44,6 @@ def return_outcome_score(row):
 
 
 def return_shape(row):
-
     outcome_score = return_outcome_score(row)
 
     if outcome_score == 0:
@@ -70,11 +69,9 @@ def return_shape(row):
 
 
 def main():
-
     score = []
 
     for row in input_data.splitlines():
-
         outcome_score = return_outcome_score(row)
 
         shape = return_shape(row)

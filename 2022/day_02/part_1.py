@@ -45,7 +45,6 @@ def return_outcome_score(row):
 
 score = []
 for row in input_data.splitlines():
-
     shape_score = return_shape_score(row)
 
     outcome_score = return_outcome_score(row)

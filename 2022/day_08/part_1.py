@@ -10,11 +10,9 @@ def set_all_cols_to_true(grid, i_row, cols):
 
 
 def check_visible_in_row(grid, visibility_grid, this_max, i_row, cols: list):
-
     current_min = 0
 
     for i_col in cols:
-
         # once we reach the max, we stop: the rest of the row won't be visible
         if grid.loc[i_row, i_col] == this_max:
             visibility_grid.loc[i_row, i_col] = True
@@ -39,11 +37,9 @@ def check_visible_in_row(grid, visibility_grid, this_max, i_row, cols: list):
 
 
 def check_visible_in_col(grid, visibility_grid, this_max, i_col, rows: list):
-
     current_min = 0
 
     for i_row in rows:
-
         # once we reach the max, we stop: the rest of the row won't be visible
         if grid.loc[i_row, i_col] == this_max:
             visibility_grid.loc[i_row, i_col] = True
@@ -68,7 +64,6 @@ def check_visible_in_col(grid, visibility_grid, this_max, i_col, rows: list):
 
 
 def main():
-
     input_data = load_input(test=False)
 
     grid = turn_into_df(input_data)
@@ -81,7 +76,6 @@ def main():
     rows = grid.index
 
     for i_row in rows:
-
         if i_row in [rows[0], rows[-1]]:
             visibility_grid = set_all_cols_to_true(visibility_grid, i_row, cols)
             continue
@@ -94,7 +88,6 @@ def main():
         )
 
     for i_col in cols:
-
         visibility_grid = check_visible_in_col(
             grid, visibility_grid, col_max[i_col], i_col, rows
         )

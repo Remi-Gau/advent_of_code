@@ -9,7 +9,6 @@ full_overlap_count = 0
 partial_overlap_count = 0
 
 for line in input_data:
-
     if line == "":
         continue
 
@@ -23,7 +22,6 @@ for line in input_data:
     id_ranges = []
 
     for elf in elves:
-
         this_range = set(range(int(elf.split("-")[0]), int(elf.split("-")[1]) + 1))
         id_ranges.append(this_range)
 

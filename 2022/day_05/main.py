@@ -13,11 +13,9 @@ def stack_count(stacks):
 
 
 def get_initial_stacks():
-
     stacks = {str(x): [] for x in range(1, 10)}
 
     for line in input_data:
-
         if line == "":
             continue
 
@@ -32,7 +30,6 @@ def get_initial_stacks():
 
 
 def main():
-
     stacks = get_initial_stacks()
 
     initial_nb_crates = stack_count(stacks)
@@ -40,7 +37,6 @@ def main():
     print(initial_nb_crates)
 
     for line in input_data:
-
         if line.startswith("move"):
             instructions = search("move {move} from {from} to {to}", line).named
 
