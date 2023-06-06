@@ -24,7 +24,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.3.2.9007
+    rev: v0.3.2.9013
     hooks:
       - id: style-files
         args: [--scope=spaces, --reindention=specify_reindention('#')]
