@@ -24,13 +24,13 @@ repos:
       - id: flake8
 
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.1
+    rev: v0.4.2
     hooks:
       - id: style-files
         args: [--scope=spaces, --reindention=specify_reindention('#')]
       - id: parsable-R
 
   - repo: https://github.com/psf/black
-    rev: "24.3.0"
+    rev: "24.4.0"
     hooks:
       - id: black
