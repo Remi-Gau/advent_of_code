@@ -14,23 +14,23 @@ repos:
       - id: reorder-python-imports
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
       - id: pyupgrade
 
   - repo: https://github.com/pycqa/flake8
-    rev: "7.0.0"
+    rev: "7.1.1"
     hooks:
       - id: flake8
 
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.2
+    rev: v0.4.3
     hooks:
       - id: style-files
         args: [--scope=spaces, --reindention=specify_reindention('#')]
       - id: parsable-R
 
   - repo: https://github.com/psf/black
-    rev: "24.4.2"
+    rev: "24.8.0"
     hooks:
       - id: black
